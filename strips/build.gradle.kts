@@ -23,7 +23,7 @@ dependencies {
     testImplementation(libs.kotlin.test.junit)
 }
 
-task<JavaExec>("run") {
+tasks.register<JavaExec>("run") {
     dependsOn("assemble")
     group = "run"
     sourceSets {

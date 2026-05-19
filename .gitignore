@@ -4,6 +4,8 @@
 bin/
 
 # Ignore Gradle build output directory
-build
+build/
 
-.idea
+.idea/
+
+.kotlin/

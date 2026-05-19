@@ -1,4 +1,4 @@
-import org.gradle.configurationcache.extensions.capitalized
+import java.util.Locale;
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
@@ -22,4 +22,8 @@ listOf("gui", "repl").forEach {
         sourceSets.main { classpath = runtimeClasspath }
         standardInput = System.`in`
     }
+}
+
+fun String.capitalized(): String {
+    return this.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
 }
